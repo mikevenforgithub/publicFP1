@@ -1,0 +1,85 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="{% static '/PlanetCrypton/styles.css' %}" src="PlanetCrypton/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">PlanetCrypton</title>
+</head>
+<body style="background-image: url('https://images.pexels.com/photos/4994815/pexels-photo-4994815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')">
+
+    <div class="centerbodylogin">
+
+        <div class="row" style="margin-top: 80px;">
+
+            <div class="col-4">
+            </div>
+
+            <div class="col-4">
+                    <a class="navbar-brand"  href="home" style=" margin-top: 80px; ">
+                        <img class="imagecrypton" src="https://i.pinimg.com/736x/18/a0/c1/18a0c1b0b13edae3ed5f0ab3befda8d2.jpg" alt="" width="100" height="70" class="d-inline-block align-top">
+                        <h1  class="planetcrypton">Planet Crypton</h1>
+                    </a>
+                <form action="{% url 'login' %}" method="post"  style=" margin-left: 0px; margin-top: 80px;">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input autofocus class="form-control" id="username" type="text" name="username" placeholder="Username">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </form>
+                <br>
+                Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+            </div>
+
+            <div class="col-4">
+            </div>
+
+        </div>
+
+    </div>
+
+<style>
+
+@media screen and (max-width: 540px) {
+    
+
+    .centerbodylogin{
+        width: 300px;
+    }
+    .col-4{
+        margin-left: -50px;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px grey;
+border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgba(255, 99, 132, 0.7);
+border-radius: 10px;
+box-shadow: rgb(255, 0, 0);
+} 
+        
+</style>
+</body>
+
+</html>
+

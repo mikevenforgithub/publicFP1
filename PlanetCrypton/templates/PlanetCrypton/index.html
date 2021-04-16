@@ -1,0 +1,345 @@
+{% extends "PlanetCrypton/layout.html" %}
+{% load static %}
+{% block head %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="centerbody" style="width: 1500px; width: 100%; margin-top: 100px;">
+
+
+    <div class="section-1 box">
+
+        <!--CRYPTOCURRENCY ARTICLES-->
+        <div class=row>
+        <div class="col-3"></div>
+        <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 80px;">Top 3 Crypto Articles</h1></div>
+        <div class="col-3"></div>
+        </div>
+
+        <div class=row>
+            <div class="col-2"></div>
+            <div class="col-8">
+            <!--CAROUSEL-->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width:800px; " >
+                
+                    <div class="carousel-inner" style="width: 800px; ">
+                    <div class="carousel-item active">
+                        <img id="imagefirst" src="" class="d-block w-100" alt="...">
+                        <div class="carousel-content">
+                            <p id="firsttitle">TITLE</p>
+                        </div>
+                        <p class="bart" id="firstarticle" style="overflow:auto;"></p> 
+                        <p style="color: rgba(255, 99, 132, 0.7);">Read the full article here:</p>
+                        <a class="bart" id="firsturl" href=""></a>    
+                    </div>
+                    <div class="carousel-item">
+                        <img id="imagesecond" src="" class="d-block w-100" alt="...">
+                        <div class="carousel-content">
+                            <p id="secondtitle">TITLE</p>
+                        </div>
+                        <p class="bart" id="secondarticle" style="overflow:auto;"></p>
+                        <p style="color: rgba(255, 99, 132, 0.7);">Read the full article here:</p>
+                        <a class="bart" id="secondurl" href="{{secondurl}}"></a> 
+                    </div>
+                    <div class="carousel-item">
+                        <img id="imagethird" src="" class="d-block w-100" alt="...">
+                        <div class="carousel-content">
+                            <p id="thirdtitle">TITLE</p>
+                        </div>
+                        <p class="bart" id="thirdarticle" style="overflow:auto;"></p>
+                        <p style="color: rgba(255, 99, 132, 0.7);">Read the full article here:</p>
+                        <a class="bart" id="thirdurl" href="{{thirdurl}}"></a> 
+                    </div>
+                    </div>
+                    <div class="carouselbuttons">
+                        <button class="carousel-control-prev"  style="margin-left:-100px;" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next"  style="margin-right:-100px;" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <br>
+        <hr>
+        <br>
+    </div>
+
+    <div class="section-2 box">
+
+        <!--CRYPTOCURRENCY TABLE-->
+        <div class=row>
+            <div class="col-3"></div>
+            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 60px;">Top Cryptocurrencies</h1></div>
+            <div class="col-3"></div>
+        </div>
+        <br>
+        <div class=row>
+        <div class="col-12 " id="crytable">
+            <div id ="container"  class="table fade-in">
+                <div id ="row" class="row">
+                    <div id="logonew" class="col-1 border-right" style="color: rgba(255, 99, 132, 0.7); ">
+
+                    </div>
+                    <div id="name" class="col-4 border-right" style="color: rgba(255, 99, 132, 0.7); ">
+                        
+                    </div>
+                    <div id="symbol" class="col-3 border-right" style="color: rgba(255, 99, 132, 0.7); ">
+                        
+                    </div>
+                    <div id="tousd" class="col-4 border-right" style="color: rgba(255, 99, 132, 0.7); ">     
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <hr>
+    <br>
+
+
+    <div class="section-3 box">
+        <!--CAROUSEL MORE NEWS-->
+        <div class=row>
+            <div class="col-3"></div>
+            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 120px;">More News</h1></div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class=row>
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div id="carouselExampleIndicatorsblk" class="carousel slide" data-bs-ride="carousel" style=" width:800px; ">
+                            
+
+                        <div class="carousel-inner" style="width: 800px; ">
+
+                            <div class="carousel-item active">
+                                <img id="imagefirstblk" src="" class="d-block w-100" alt="...">
+                                <div class="carousel-content">
+                                    <p id="firsttitleblk">TITLE</p>
+                                </div>
+                                <p class="bartblk" id="firstarticleblk" style="overflow:auto;"></p> 
+                                <p style="color: rgba(255, 99, 132, 0.7);">Read the full article here:</p>
+                                <a class="bart" id="firsturlblk" href="{{firsturlblk}}"></a>    
+                            </div>
+
+                            <div class="carousel-item">
+                                <img id="imagesecondblk" src="" class="d-block w-100" alt="...">
+                                <div class="carousel-content">
+                                    <p id="secondtitleblk">TITLE</p>
+                                </div>
+                                <p class="bartblk" id="secondarticleblk" style="overflow:auto;"></p>
+                                <p style="color: rgba(255, 99, 132, 0.7);">Read the full article here:</p>
+                                <a class="bart" id="secondurlblk" href="{{secondurlblk}}"></a> 
+                            </div>
+
+                            <div class="carousel-item">
+                                <img id="imagethirdblk" src="" class="d-block w-100" alt="...">
+                                <div class="carousel-content">
+                                    <p id="thirdtitleblk">TITLE</p>
+                                </div>
+                                <p class="bartblk" id="thirdarticleblk" style="overflow:auto;"></p>
+                                <p style="color: rgba(255, 99, 132, 0.7);">Read the full article here:</p>
+                                <a class="bart" id="thirdurlblk" href="{{thirdurlblk}}"></a> 
+                            </div>
+
+                        </div>
+                        <div class="carouselbutton">
+                            <button class="carousel-control-prev"  style="margin-left:-100px;" type= button data-bs-target="#carouselExampleIndicatorsblk"  data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next"  style="margin-right:-100px;" type=button data-bs-target="#carouselExampleIndicatorsblk"  data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <br>
+        <hr>
+        <br>
+    </div>    
+
+
+
+
+    <div class="section-4 box">
+
+            <!--CRYPTOCURRENCY GRAPHS -->
+        <div class=row>
+            <div class="col-3"></div>
+            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 200px;">10 Days</h1></div>
+            <div class="col-3"></div>
+        </div>
+        
+        <div id="charts" style="margin-left: 100px; margin-right: 200px; width:1100px; ">
+            <div class="chart-container  from-right slide-in" style=" float:left; height:500px; width:550px">
+                <canvas id="chartbit"></canvas>
+            </div>
+            <div class="chart-container from-left slide-in" style=" overflow: hidden;  height:500px; width:550px">
+                <canvas id="charteth"></canvas>
+            </div>
+        </div>
+        <div id="charts" style="margin-left: 100px; margin-right: 200px; width:1100px; ">
+            <div class="chart-container  from-right slide-in" style=" float:left; height:500px; width:550px">
+                <canvas id="chartlite"></canvas>
+            </div>
+            <div class="chart-container from-left slide-in" style=" overflow: hidden;  height:500px; width:550px">
+                <canvas id="chartmaker"></canvas>
+            </div>
+        </div>
+          
+    </div>
+
+
+
+    <style>
+       
+        .section-1{
+            background:rgba(14, 15, 45, 0.961) ;
+            box-sizing: border-box;
+            height: 700px;
+            
+            
+        }
+        .section-2{
+            background-image: url('https://images.pexels.com/photos/517884/pexels-photo-517884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+            background-attachment: fixed;
+            
+        }
+        .section-3{
+            background:rgba(14, 15, 45, 0.961) ;
+            box-sizing: border-box;
+            height: 700px;
+            
+            
+        }
+        .section-4{
+            background-image: url('https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-attachment: fixed;
+            
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transition: opacity 250ms ease-in;
+        }
+
+        .fade-in.appear{
+            opacity:1;
+        }
+
+        .from-left{
+           transform: translateX(100%);
+        }
+        .from-right{
+            transform: translateX(-100%);
+        }
+
+        .from-left,
+        .from-right{
+            transition: transform 1s ease-in;
+        }
+
+        .from-left.appear,
+        .from-right.appear{
+            transform: translateX(0);
+        }
+         /* width */
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: rgba(255, 99, 132, 0.7);
+        border-radius: 10px;
+        box-shadow: rgb(255, 0, 0);
+        } 
+        
+       
+        
+    </style>
+</div>
+
+
+<script>
+
+    const faders = document.querySelector('.fade-in');
+     
+    const options = {
+        threshold: 0.5,
+        rootMargin: "0px 0px -50px 0px",
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+       entries.forEach(entry => {
+           if (!entry.isIntersecting ) {
+               return;
+           } else {
+               console.log(entry);
+               entry.target.classList.add("appear");
+               appearOnScroll.unobserve(entry.target);
+           }
+       })
+    }, options);
+
+    
+   appearOnScroll.observe(faders);
+    
+
+   const sliders = document.querySelectorAll('.slide-in');
+     
+   const optionssecond = {
+       threshold: 0,
+       rootMargin: "0px 0px -50px 0px",
+   };
+
+   const appearOnScrollsecond = new IntersectionObserver(function(entries, appearOnScrollsecond) {
+      entries.forEach(entry => {
+          if (!entry.isIntersecting ) {
+              return;
+          } else {
+              console.log(entry);
+              entry.target.classList.add("appear");
+              appearOnScrollsecond.unobserve(entry.target);
+          }
+      })
+   }, optionssecond);
+
+   sliders.forEach(slides => {
+   appearOnScrollsecond.observe(slides);
+   });
+
+</script> 
+
+
+
+{% endblock %}
+
+{% block script %}
+
+
+
+
+{% endblock %}

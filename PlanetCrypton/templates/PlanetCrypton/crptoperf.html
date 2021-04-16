@@ -1,0 +1,354 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="{% static '/PlanetCrypton/styles.css' %}" src="PlanetCrypton/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">PlanetCrypton</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    
+{% block head %}
+{% endblock %}
+</head>
+
+
+<body style=" background-image: url('https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); height:max-content; ">
+
+<div class="fullbody" style="width: 1500px; background-image: url(''); "> 
+    
+    
+    <!-- TOP NAVBAR-->
+    <nav class="navbar navbar-light" id="nav" >
+
+        <div class="container-fluid" style=" height:min-content;  display: flex;  display:inline-block; height: 108px">
+            <div class="row">
+                <div class="col-10">
+                    <div id="navcontainer1" style="flex-basis: 50%;  display:inline-block;">
+                        <a class="navbar-brand" href="/home" style="width:1050px">
+                            <img class="imagecrypton" src="https://i.pinimg.com/736x/18/a0/c1/18a0c1b0b13edae3ed5f0ab3befda8d2.jpg" alt="" width="100" height="70" class="align-top">
+                            <h1  class="planetcrypton">Planet Crypton</h1>
+                            <h3  class="planetcrypton1">Keep Up with Cryptocurrencies</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div id="picandname" style="flex-basis: 50%;  display:inline-block;">
+                        <ul class="navbar-nav" style="margin-top:60px;">
+                            {% if user.is_authenticated %}
+                            <li> <img id="profilepic" src="{{profilepic.profile_pic.url}}"> </li> 
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                                <li class="nav-username">
+                                    <h5 class="nav-links" ><strong>{{ user }}</strong></h5>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div> 
+                </div>
+                <div class="col-1">
+                    <div id="navcontainer3" style="flex-basis: 50%;  display:inline-block; ">
+                        <ul class="navbar-nav" style="margin-top:20px;">
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-links" href="/profile/{{user}}">My Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-links" href="{% url 'logout' %}">Log Out</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-links" href="{% url 'login' %}">Log In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-links" href="{% url 'register' %}">Register</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- SIDEBAR -->
+            <div class="row">
+                <div class="sidecontainer">
+                    <div class="hamburger-menu" id="hamburger-menu">
+                        <div class="line_1"></div>
+                        <div class="line_2"></div>
+                        <div class="line_3"></div>
+                    </div>
+                    <div class="sidebar" id="sidebar">
+                        <ul class="nav list" id="sidebar1">
+                            <li class="side-item">
+                            <a class="side-link " aria-current="page" href="/home">Home</a>
+                            </li>
+                            <li class="side-item">
+                            <a class="side-link " aria-current="page" href="/articles">Articles</a>
+                            </li>
+                            <li class="side-item">
+                            <a class="side-link" href="/crptoperf">Crypto Performances</a>
+                            </li>
+                            <li class="side-item">
+                            <a class="side-link" href="/blockchain">BTC Blockchain</a>
+                            </li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    
+
+    
+     <!--GRAPHS-->
+    
+    <div style="min-height: max-content;">
+
+        <div id="centerofcrp" class=row style="height: 400px;">
+            <div class="col-0"></div>
+            <div class="col-11" style="margin-left: 50px;">
+                <div class="searchbar" style="height: 50px; margin-top:200px; margin-left:490px;" >
+                    <h1 id="just" style="margin-left:-230px;">Just type the Cryptocurrency you are looking for!</h1>
+                    <input  style="width: 400px; margin-top:30px; border-radius: 25%;" type="search" name="searchbar" id="searchbar" placeholder="Search for Crypto">
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+        <div class=row >
+            <div class="col-1"></div>
+            <div class="col-10" >
+            <div id="newcharts" style="  width:1250px;height:1000px; overflow:auto;"></div>       
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    
+</div>   
+
+<footer>
+    <div class="main-content">
+        <div class="left box"> 
+            <h2 id="contentf">About This Website</h2>
+            <div class="contentf">
+            <p> This website is used to track and monitor cryptocurrencices, and to keep update with the latest news of the crypto market</p>
+                <div class="social">
+                    <a href=""> <span class="fab fa-facebook-f"> </span></a>
+                    <a href=""> <span class="fab fa-twitter"> </span></a>
+                    <a href=""> <span class="fab fa-instagram"> </span></a>
+                    <a href=""> <span class="fab fa-youtube"> </span></a>
+                </div>
+            </div>
+        </div>
+        <div class="center box">
+            <h2 id="contentf">Address</h2>
+            <div class="contentf">
+                <div class="place">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="textf">London, UK</span>
+                </div>
+                <div class="phone">
+                    <span class="fas fa-phone-alt"></span>
+                    <span class="textf">Phone Number</span>
+                </div>
+                <div class="email">
+                    <span class="fas fa-envelope"></span>
+                    <span class="textf">myemail@me.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="right box">
+            <h2 id="contentf">Contact Me</h2>
+            <div class="content">
+                <div class="textf">( Soon Available )</div>
+                <form action="#">
+                    <div class="email">
+                        <div class="textf">Email *</div>
+                        <input type="email" required>
+                    </div>
+                    <div class="message">
+                        <div class="textf">Message *</div>
+                        <textarea name="" id="" cols="25" rows="2" required></textarea>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<style>
+
+    @media screen and (max-width: 540px) {
+        #just{
+            font-size: 40px;
+            
+        }
+        #newcharts {
+            min-height: 2000px;
+        }
+    }
+
+
+    h1{
+        color: rgba(255, 99, 132, 0.7);
+    }
+    #arttit{
+        font-weight: bold;
+        margin-left: 100px;
+        margin-right: 100px;
+        color: rgba(255, 99, 132, 0.7);
+        text-shadow: 2px 2px #000000;
+    }
+    #artimg{
+        width: 300px ;
+        height: 300px ;
+        margin-left: 200px;
+        
+    }
+    #artsum{
+        color: rgba(255, 99, 132, 0.7);   
+    }
+    #brake{
+        color: rgba(255, 99, 132, 0.7);   
+        height:10px;
+    }
+
+    footer{
+        width:2000px;
+        position: relative;
+        margin-bottom: -100px;
+        height: 500;
+        background: rgba(14, 15, 45, 0.961);
+    }
+    
+    .main-content{
+        display: flex;
+        position: static;
+    }
+    .main-content .box{
+        flex-basis: 50%;
+        padding: 10px 20px;
+    }
+    .box h2{
+        font-size: 1.125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .box .content{
+       margin:20px 0 0 0;
+    
+    }
+    .left .content p{
+        text-align: justify;
+    
+    }
+    .left .content .social{
+        margin: 20px 0 0 0;
+    
+    }
+    .left .content .social a{
+        padding: 0 2px;
+    
+    }
+    .left .content .social a span{
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: paleturquoise;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: 0.3s;
+    
+    }
+    .left .content .social a span:hover{
+       background-color: rgb(63, 65, 118);
+    }  
+
+    .textf{
+        color: rgba(255, 99, 132, 0.7);
+        
+    }
+    .contentf{
+        color: rgba(255, 99, 132, 0.7);
+        
+    }
+    #contentf{
+        color: rgba(255, 99, 132, 0.7);
+        
+    }
+    #wrapper{
+        width: 400px;
+        height: 250px;
+        background: purple;
+        margin: 5px;
+        border: black;
+        border-width: 1px;
+        position:relative;
+        
+      }
+    
+     /* width */
+    ::-webkit-scrollbar {
+    width: 20px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: rgba(255, 99, 132, 0.7);
+    border-radius: 10px;
+    box-shadow: rgb(255, 0, 0);
+    } 
+    
+    
+
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="{% static 'PlanetCrypton/crptoperf.js' %}"></script>   
+
+</body>
+
+
+<script>
+
+    window.addEventListener('scroll', function(){
+        let nav = document.getElementById('nav');
+        nav.classList.toggle('scrolling-active', window.scrollY > 0);
+    })
+    
+    
+    const menuIcon = document.getElementById("hamburger-menu");
+    const sidebar = document.getElementById("sidebar");
+
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('change');
+        sidebar.classList.toggle('change');
+         
+    });
+   
+
+
+</script>
+
+
+</html>
+
+
