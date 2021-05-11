@@ -10,20 +10,20 @@
 <div class="centerbody" style="width: 1500px; width: 100%; margin-top: 100px;">
 
 
-    <div class="section-1 box">
+    <div class="section-1 box" >
 
         <!--CRYPTOCURRENCY ARTICLES-->
         <div class=row>
         <div class="col-3"></div>
-        <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 80px;">Top 3 Crypto Articles</h1></div>
+        <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; text-align:center;">Top 3 Crypto Articles</h1></div>
         <div class="col-3"></div>
         </div>
 
         <div class=row>
             <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-8" style="align-items:center; width:100%;">
             <!--CAROUSEL-->
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width:800px; " >
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width:800px; margin:auto; " >
                 
                     <div class="carousel-inner" style="width: 800px; ">
                     <div class="carousel-item active">
@@ -78,12 +78,12 @@
         <!--CRYPTOCURRENCY TABLE-->
         <div class=row>
             <div class="col-3"></div>
-            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 60px;">Top Cryptocurrencies</h1></div>
+            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; text-align:center;">Top Cryptocurrencies</h1></div>
             <div class="col-3"></div>
         </div>
         <br>
         <div class=row>
-        <div class="col-12 " id="crytable">
+        <div class="col-12 " id="crytable" style="margin:auto;">
             <div id ="container"  class="table fade-in">
                 <div id ="row" class="row">
                     <div id="logonew" class="col-1 border-right" style="color: rgba(255, 99, 132, 0.7); ">
@@ -109,14 +109,14 @@
         <!--CAROUSEL MORE NEWS-->
         <div class=row>
             <div class="col-3"></div>
-            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 120px;">More News</h1></div>
+            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; text-align:center;">More News</h1></div>
             <div class="col-3"></div>
         </div>
 
         <div class=row>
             <div class="col-2"></div>
             <div class="col-8">
-                <div id="carouselExampleIndicatorsblk" class="carousel slide" data-bs-ride="carousel" style=" width:800px; ">
+                <div id="carouselExampleIndicatorsblk" class="carousel slide" data-bs-ride="carousel" style=" width:800px; margin:auto;">
                             
 
                         <div class="carousel-inner" style="width: 800px; ">
@@ -177,30 +177,34 @@
 
 
 
-    <div class="section-4 box">
+    <div class="section-4 box" style="width:100%;">
 
             <!--CRYPTOCURRENCY GRAPHS -->
         <div class=row>
             <div class="col-3"></div>
-            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; margin-left: 200px;">10 Days</h1></div>
+            <div class="col-6" style="height: 100px; margin-top:40px;"><h1 id="top5" style="align-content: center; text-align:center;">10 Days</h1></div>
             <div class="col-3"></div>
         </div>
-        
-        <div id="charts" style="margin-left: 100px; margin-right: 200px; width:1100px; ">
-            <div class="chart-container  from-right slide-in" style=" float:left; height:500px; width:550px">
-                <canvas id="chartbit"></canvas>
+
+        <div id="frontcharts" style="margin:auto;">
+
+            <div id="charts" style=" width:1100px; margin:auto;">
+                <div class="chart-container  from-right slide-in" style=" float:left; height:500px; width:550px">
+                    <canvas id="chartbit"></canvas>
+                </div>
+                <div class="chart-container from-left slide-in" style=" overflow: hidden;  height:500px; width:550px">
+                    <canvas id="charteth"></canvas>
+                </div>
             </div>
-            <div class="chart-container from-left slide-in" style=" overflow: hidden;  height:500px; width:550px">
-                <canvas id="charteth"></canvas>
+            <div id="charts" style=" width:1100px; margin:auto;">
+                <div class="chart-container  from-right slide-in" style=" float:left; height:500px; width:550px">
+                    <canvas id="chartlite"></canvas>
+                </div>
+                <div class="chart-container from-left slide-in" style=" overflow: hidden;  height:500px; width:550px">
+                    <canvas id="chartmaker"></canvas>
+                </div>
             </div>
-        </div>
-        <div id="charts" style="margin-left: 100px; margin-right: 200px; width:1100px; ">
-            <div class="chart-container  from-right slide-in" style=" float:left; height:500px; width:550px">
-                <canvas id="chartlite"></canvas>
-            </div>
-            <div class="chart-container from-left slide-in" style=" overflow: hidden;  height:500px; width:550px">
-                <canvas id="chartmaker"></canvas>
-            </div>
+
         </div>
           
     </div>
