@@ -1,12 +1,4 @@
 
-# Final Project - Capstone Project 
-# *Planet Crypton*
-
-> ## Harvard & Edx      
-> ## CS50 Web Development with Python and Javascript
-
----
- 
  To launch the app, simply run it in your terminal:
 
     cd FP1 
@@ -19,15 +11,10 @@ then
 This project titled "Planet Crypton", inspired by the word cryptocurrency and Superman's Home Planet Krypton, is a website designed to keep its users updated regarding the latest fluctuations, news and data of their favorite cryptocurrencies. 
 A user can register and browse through the features of the project or access some of the features without registration.
 
-## - THE REQUIREMENTS FOR THIS PROJECT -
 
-**Distinctiveness**
+**The Complexity**
 
-The project satisfies the requirements of distinctiveness because the website created is neither a social network and neither an e-commerce website, nor of any kind similar to the previous projects of the CS50W course, but it is instead a type of hybrid news/finance website with the feature of becoming a member and keeping updated with news and fluctuations of the cryptocurrency market and currencies you prefer. 
-
-**Complexity**
-
-The project satisfies the requirement of complexity in the following ways:
+The project is complex in the following ways:
 
 * Uses Django
 * 3 models in the models.py are created in the back end to store data
